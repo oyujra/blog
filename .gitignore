@@ -1,11 +1,11 @@
-HELP.md
+# Compilados de Gradle
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### STS ###
+# Archivos generados por STS
 .apt_generated
 .classpath
 .factorypath
@@ -17,7 +17,7 @@ bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
-### IntelliJ IDEA ###
+# Archivos generados por IntelliJ IDEA
 .idea
 *.iws
 *.iml
@@ -26,12 +26,44 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
-### NetBeans ###
+# Archivos generados por NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
 
-### VS Code ###
+# Archivos generados por VS Code
 .vscode/
+
+# Archivos generados por Maven (si alguna vez usas Maven además de Gradle)
+target/
+
+# Archivos de logs
+*.log
+
+# Archivos temporales de sistemas operativos
+.DS_Store
+Thumbs.db
+
+# Archivos sensibles (si tienes claves o configuraciones sensibles en tu proyecto)
+*.env
+
+# Archivos de compilación y cachés generados por Docker
+.docker/
+*.dockerfile
+
+# Directorios y archivos de configuraciones específicas del entorno
+*.sublime-workspace
+*.sublime-project
+*.sublime-project*
+
+# Archivos generados por IDEs adicionales o editores
+*.swp
+*.swo
+*.tmp
+
+# Archivos de configuración específicos del sistema
+*.pid
+*.seed
+*.db

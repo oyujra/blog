@@ -1,0 +1,105 @@
+Documentación de la API.
+
+### 1. **Crear Autor**
+
+```json
+POST /api/autores
+
+{
+  "nombre": "Omar",
+  "apellidoPaterno": "Yujra",
+  "apellidoMaterno": "Huanca",
+  "fechaNacimiento": "1981-09-09",
+  "paisResidencia": "Bolivia",
+  "correoElectronico": "oyujra@gmail.com"
+}
+```
+
+### 2. **Crear Blog**
+
+```json
+POST /api/blogs
+
+{
+  "titulo": "Introducción a Spring Boot",
+  "tema": "Desarrollo",
+  "contenido": "Spring Boot es una herramienta poderosa para el desarrollo de aplicaciones Java...",
+  "periodicidad": "SEMANAL",
+  "permiteComentarios": true,
+  "autor": {
+    "id": 1
+  }
+}
+```
+
+### 3. **Añadir Comentarios a un Blog**
+
+```json
+POST /api/blogs/{blogId}/comentarios
+
+{
+  "nombrePublicador": "Ana",
+  "correo": "ana@gmail.com",
+  "paisResidencia": "Bolivia",
+  "comentario": "Excelente artículo, muy útil.",
+  "puntuacion": 9
+}
+```
+
+### 4. **Actualizar Blog**
+
+```json
+PUT /api/blogs/{id}
+
+{
+  "titulo": "Actualización de Spring Boot",
+  "tema": "Desarrollo",
+  "contenido": "Este artículo ha sido actualizado para incluir nuevas características de Spring Boot...",
+  "periodicidad": "MENSUAL",
+  "permiteComentarios": false
+}
+```
+
+### 5. **Consultar Blog**
+
+```json
+GET /api/blogs/{id}
+```
+
+Para la consulta, no necesitas un cuerpo de solicitud, ya que el ID del blog se pasa como parte de la URL. La respuesta será un JSON con la información del blog, incluyendo los comentarios y el resumen de puntuaciones.
+
+#### Ejemplo de Respuesta para Consultar Blog
+
+```json
+{
+  "id": 1,
+  "titulo": "Actualización de Spring Boot",
+  "tema": "Desarrollo",
+  "contenido": "Este artículo ha sido actualizado para incluir nuevas características de Spring Boot...",
+  "periodicidad": "MENSUAL",
+  "permiteComentarios": false,
+  "autor": {
+    "id": 1,
+	"nombre": "Omar",
+	"apellidoPaterno": "Yujra",
+	"apellidoMaterno": "Huanca",
+	"fechaNacimiento": "1981-09-09",
+	"paisResidencia": "Bolivia",
+	"correoElectronico": "oyujra@gmail.com"
+  },
+  "comentarios": [
+    {
+      "id": 1,
+      "nombrePublicador": "Ana",
+      "correo": "ana@gmail.com",
+      "paisResidencia": "Bolivia",
+      "comentario": "Excelente artículo, muy útil.",
+      "puntuacion": 9
+    }
+  ],
+  "minPuntuacion": 9,
+  "maxPuntuacion": 9,
+  "avgPuntuacion": 9.0
+}
+```
+

@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "809a09d7-687a-42d0-bcdb-9c7857d922cb",
+		"name": "BISA BLOG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1367975",
+		"_collection_link": "https://blue-astronaut-558871.postman.co/workspace/New-Team-Workspace~4cbd647a-6384-481c-be6d-976d9a1b9ad2/collection/1367975-809a09d7-687a-42d0-bcdb-9c7857d922cb?action=share&source=collection_link&creator=1367975"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/api/autores",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Omar\",\r\n  \"apellidoPaterno\": \"Yujra\",\r\n  \"apellidoMaterno\": \"Huanca\",\r\n  \"fechaNacimiento\": \"1981-09-09\",\r\n  \"paisResidencia\": \"Bolivia\",\r\n  \"correoElectronico\": \"oyujra@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/autores",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"autores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/blogs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Introducción a Spring Boot\",\r\n  \"tema\": \"Desarrollo\",\r\n  \"contenido\": \"Spring Boot es una herramienta poderosa para el desarrollo de aplicaciones Java...\",\r\n  \"periodicidad\": \"SEMANAL\",\r\n  \"permiteComentarios\": true,\r\n  \"autor\": {\r\n    \"id\": 1\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/blogs",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/blogs/1/comentarios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombrePublicador\": \"Ana\",\r\n  \"correo\": \"ana@gmail.com\",\r\n  \"paisResidencia\": \"Bolivia\",\r\n  \"comentario\": \"Excelente artículo, muy útil.\",\r\n  \"puntuacion\": 9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/blogs/1/comentarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"blogs",
+						"1",
+						"comentarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/blogs/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Actualización de Spring Boot\",\r\n  \"tema\": \"Desarrollo\",\r\n  \"contenido\": \"Este artículo ha sido actualizado para incluir nuevas características de Spring Boot...\",\r\n  \"periodicidad\": \"MENSUAL\",\r\n  \"permiteComentarios\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/blogs/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"blogs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/blogs/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/blogs/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"blogs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
