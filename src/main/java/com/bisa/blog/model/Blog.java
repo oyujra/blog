@@ -36,5 +36,14 @@ public class Blog {
 
     @OneToMany(mappedBy = "blog", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Comentario> comentarios;
+
+    @Transient
+    private int minPuntuacion;
+
+    @Transient
+    private int maxPuntuacion;
+
+    @Transient
+    private double avgPuntuacion;
 }
 
